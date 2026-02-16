@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f2f2f2;
+      color: #000;
+    }
+
+    .container {
+      width: 85%;
+      margin: auto;
+    }
+
+    .header {
+      background: #0e0e0e;
+      padding: 25px 0;
+      color: white;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .checkout {
+      padding: 80px 0;
+    }
+
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+    }
+
+    .form {
+      background: white;
+      padding: 50px;
+      border-radius: 10px;
+    }
+
+    .back {
+      color: #888;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      color: #d87d4a;
+      margin: 30px 0 20px;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .input-box {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    label {
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .payment-method {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .summary {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      height: fit-content;
+    }
+
+    .summary h2 {
+      margin-bottom: 30px;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .item p {
+      color: #777;
+    }
+
+    .total,
+    .grand {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    .grand span {
+      color: #d87d4a;
+      font-weight: bold;
+    }
+
+    .pay-btn {
+      width: 100%;
+      margin-top: 30px;
+      padding: 15px;
+      background: #d87d4a;
+      color: white;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      background: #0e0e0e;
+      color: white;
+      padding: 60px 0;
+      margin-top: 100px;
+    }
+
+    .footer p {
+      color: #aaa;
+      margin: 20px 0;
+      max-width: 500px;
+    }
+  </style>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <h2 class="logo">audiophile</h2>
+
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">Headphones</a>
+          <a href="#">Speakers</a>
+          <a href="#">Earphones</a>
+        </nav>
+
+        <span class="cart">🛒</span>
+      </div>
+    </header>
+
+    <section class="checkout">
+      <div class="container checkout-grid">
+        <form class="form">
+          <a href="#" class="back">Go Back</a>
+
+          <h1>Checkout</h1>
+
+          <h3 class="section-title">Billing Details</h3>
+
+          <div class="row">
+            <div class="input-box">
+              <label>Name</label>
+              <input type="text" placeholder="Alexei Ward" />
+            </div>
+
+            <div class="input-box">
+              <label>Email Address</label>
+              <input type="email" placeholder="alexei@mail.com" />
+            </div>
+          </div>
+
+          <div class="input-box">
+            <label>Phone Number</label>
+            <input type="text" placeholder="+1 202-555-0136" />
+          </div>
+
+          <h3 class="section-title">Shipping Info</h3>
+
+          <div class="input-box">
+            <label>Address</label>
+            <input type="text" placeholder="1137 Williams Avenue" />
+          </div>
+
+          <div class="row">
+            <div class="input-box">
+              <label>ZIP Code</label>
+              <input type="text" placeholder="10001" />
+            </div>
+
+            <div class="input-box">
+              <label>City</label>
+              <input type="text" placeholder="New York" />
+            </div>
+          </div>
+
+          <div class="input-box">
+            <label>Country</label>
+            <input type="text" placeholder="United States" />
+          </div>
+
+          <h3 class="section-title">Payment Details</h3>
+
+          <div class="payment-method">
+            <label>
+              <input type="radio" name="payment" checked />
+              e-Money
+            </label>
+
+            <label>
+              <input type="radio" name="payment" />
+              Cash on Delivery
+            </label>
+          </div>
+
+          <div class="row">
+            <div class="input-box">
+              <label>e-Money Number</label>
+              <input type="text" placeholder="238521993" />
+            </div>
+
+            <div class="input-box">
+              <label>e-Money PIN</label>
+              <input type="text" placeholder="6891" />
+            </div>
+          </div>
+        </form>
+
+        <div class="summary">
+          <h2>Summary</h2>
+
+          <div class="item">
+            <div>
+              <strong>XX99 MK II</strong>
+              <p>$ 2,999</p>
+            </div>
+            <span>x1</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>XX59</strong>
+              <p>$ 899</p>
+            </div>
+            <span>x2</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>YX1</strong>
+              <p>$ 599</p>
+            </div>
+            <span>x1</span>
+          </div>
+
+          <div class="total">
+            <p>Total</p>
+            <span>$ 5,396</span>
+          </div>
+
+          <div class="total">
+            <p>Shipping</p>
+            <span>$ 50</span>
+          </div>
+
+          <div class="total">
+            <p>VAT (Included)</p>
+            <span>$ 1,079</span>
+          </div>
+
+          <div class="grand">
+            <p>Grand Total</p>
+            <span>$ 5,446</span>
+          </div>
+
+          <button class="pay-btn">Continue & Pay</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <h2>audiophile</h2>
+        <p>
+          Audiophile is an all in one stop to fulfill your audio needs. We're a
+          small team of music lovers and sound specialists.
+        </p>
+        <span>Copyright 2021. All Rights Reserved</span>
+      </div>
+    </footer>
+  </body>
+</html>
